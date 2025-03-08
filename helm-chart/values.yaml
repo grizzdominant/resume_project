@@ -1,0 +1,35 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 80
+
+ingress:
+  enabled: false  # Set to true if using Ingress
+  host: resume.local
+
+configMap:
+  indexHtml: |
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resume</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>Hello, this is my resume!</h1>
+    </body>
+    </html>
+  stylesCss: |
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
