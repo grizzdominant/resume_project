@@ -37,7 +37,7 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add helm/values.yaml
+          git add helm-chart/values.yaml
           git commit -m "Update image tag to ${{ github.sha }}"
           git push
 
