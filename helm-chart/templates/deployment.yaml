@@ -9,22 +9,16 @@ spec:
   selector:
     matchLabels:
       app: {{ .Release.Name }}
+spec:
   template:
-    metadata:
-      labels:
-        app: {{ .Release.Name }}
-      annotations:
-        checksum/config: {{ .Files.Get "configmap.yaml" | sha256sum }}
     spec:
       containers:
-        - name: nginx
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        - name: resume-site
+          image: {{ .Values.image }}
           ports:
             - containerPort: 80
-          volumeMounts:
-            - name: html-volume
-              mountPath: /usr/share/nginx/html
-      volumes:
-        - name: html-volume
-          configMap:
-            name: {{ .Release.Name }}-html
+    #metadata:
+    #  labels:
+    #    app: {{ .Release.Name }}
+    #  annotations:
+    #    checksum/config: {{ .Files.Get "configmap.yaml" | sha256sum }}
