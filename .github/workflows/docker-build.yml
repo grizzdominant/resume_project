@@ -31,7 +31,7 @@ jobs:
 
       - name: Update Helm chart with new image tag
         run: |
-          sed -i 's|image: grizzdominant/resume-site:.*|image: grizzdominant/resume-site:${{ github.sha }}|' helm/values.yaml
+          sed -i 's|image: grizzdominant/resume-site:.*|image: grizzdominant/resume-site:${{ github.sha }}|' helm-chart/values.yaml
 
       - name: Commit and push changes
         run: |
