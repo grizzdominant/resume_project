@@ -33,3 +33,8 @@ configMap:
         text-align: center;
     }
 
+autoscaling:
+  enabled: true  # Or true, depending on your needs
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80
