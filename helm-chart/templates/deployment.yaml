@@ -17,3 +17,6 @@ spec:
           image: {{ .Values.image }}
           ports:
             - containerPort: 80
+    metadata:
+       labels:
+         app: {{ .Release.Name }}
