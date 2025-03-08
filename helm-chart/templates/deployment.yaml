@@ -2,21 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}
-  labels:
-    app: {{ .Release.Name }}
 spec:
-  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: {{ .Release.Name }}
-spec:
   template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
     spec:
       containers:
-        - name: resume-site
-          image: {{ .Values.image }}
-          ports:
-            - containerPort: 80
-    metadata:
-       labels:
-         app: {{ .Release.Name }}
+      - name: nginx
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        ports:
+        - containerPort: 80
+
