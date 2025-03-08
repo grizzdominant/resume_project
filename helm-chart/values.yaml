@@ -1,7 +1,7 @@
 replicaCount: 1
 
 
-image: grizzdominant/resume-site:latest
+image: grizzdominant/resume-site:270b5735fa55f28c5df53e2a5806c312f976dca7
 
 service:
   type: LoadBalancer
