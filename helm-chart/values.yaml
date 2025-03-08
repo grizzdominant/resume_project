@@ -24,7 +24,7 @@ configMap:
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1>Hello, this is my resume!</h1>
+        <h1>Hello, this is my page loading from values.yaml helm chart configMap</h1>
     </body>
     </html>
   stylesCss: |
