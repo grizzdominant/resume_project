@@ -1,5 +1,7 @@
 # resume_project repo
  HTML/CSS project for WGU course that I turned into testing Github Actions + Docker build + Helm chart + ArgoCD automation
+
+ tl;dr: A code push triggers a GitHub Actions workflow that builds and pushes a new Docker image, updates the Helm chart with the new tag, and uses ArgoCD to automatically deploy the updated image to the Kubernetes cluster.
  
  -> Code push to the repo results in Github Actions workflow firing off.
  
